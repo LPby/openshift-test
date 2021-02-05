@@ -2,6 +2,6 @@ FROM ubuntu
 
 RUN apt update && \
     apt -y upgrade && \
-    apt -y install openssh-server
+    apt -y install openssh-server iputils-ping traceroute
 
 CMD sleep 365d
