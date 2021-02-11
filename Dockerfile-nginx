@@ -1,0 +1,4 @@
+FROM nginxinc/nginx-unprivileged
+USER root
+RUN cp /usr/share/nginx/html/index.html /usr/share/nginx/html/default/index.html
+USER nginx
