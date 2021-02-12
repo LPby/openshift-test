@@ -1,5 +1,8 @@
 FROM nginxinc/nginx-unprivileged
 USER root
 RUN mkdir /usr/share/nginx/html/default && \
-    cp /usr/share/nginx/html/index.html /usr/share/nginx/html/default/index.html
+    cp /usr/share/nginx/html/index.html /usr/share/nginx/html/default/index.html && \
+    chmod 777 /usr/share/nginx/html/default/index.html && \
+    echo 'sed -i "/Thank/a hostname: $HOSTNAME" /usr/share/nginx/html/default/index.html' > /docker-entrypoint.d/add-hostname.sh && \
+    chmod +x /docker-entrypoint.d/add-hostname.sh
 USER nginx
