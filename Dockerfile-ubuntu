@@ -2,6 +2,6 @@ FROM ubuntu
 
 RUN apt update && \
     apt -y upgrade && \
-    apt -y install openssh-server iputils-ping traceroute iproute2 net-tools netcat bind-utils
+    apt -y install openssh-server iputils-ping traceroute iproute2 net-tools netcat dnsutils
 
 CMD sleep 365d
