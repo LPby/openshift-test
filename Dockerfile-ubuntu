@@ -1,7 +1,10 @@
 FROM ubuntu
 
+COPY run.sh /run.sh
+
 RUN apt update && \
     apt -y upgrade && \
-    apt -y install openssh-server iputils-ping traceroute iproute2 net-tools netcat dnsutils
+    apt -y install openssh-server iputils-ping traceroute iproute2 net-tools netcat dnsutils \
+    chmod +x /run.sh
 
-CMD sleep 365d
+CMD /run.sh
